@@ -8,7 +8,14 @@ class ReviewsController < ApplicationController
     @show_review = SingleReview.new.show_review(params[:id])
   end
 
-  def post
+  def edit
+    @post_review = ReviewPost.new.post_review(params[:id])
+  end
 
+  def update
+    @reviews = AllReviews.new.get_all_reviews
+    @reviews.last
+    # @post_review = ReviewPost.new.post_review(params[:id])
+    # @post_review.
   end
 end
