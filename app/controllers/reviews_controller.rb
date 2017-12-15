@@ -5,8 +5,7 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    id = params[:id]
-    @show_review = HTTParty.get('http://localhost:3001/reviews/' + id)
+    @show_review = SingleReview.new.show_review(params[:id])
   end
 
   def post
