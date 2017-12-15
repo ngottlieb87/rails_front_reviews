@@ -1,17 +1,20 @@
-<!-- <%= form_tag @reviews, :method=> :post %>
+
+<%= form_for @review, :method => post: do |f| %>
   <div class="col-4">
     <div class="form-group">
-      <%= label_tag :review %>
-      <%= text_field_tag 'reviews[author]' %>
-      <%= label_tag :content %>
-      <%= text_field_tag 'reviews[:content]' %>
-      <%= label_tag :destination, :class => "form_name" %>
-      <%= text_field_tag 'reviews[destination]' %>
-    <span class="input-group-btn">
-      <%= submit_tag "Create Review"%>
-    </span>
+      <%= f.label :author, :class => "form_name" %>
+      <%= f.text_field new_review['author'], :class => "form-control" %>
+      <%= f.label :content, :class => "form_name" %>
+      <%= f.text_field new_review['content'], :class => "form-control" %>
+      <%= f.label :destination, :class => "form_name" %>
+      <%= f.text_field new_review['destination'], :class => "form-control" %>
+      <span class="input-group-btn">
+      <%= f.submit :class => "btn btn-primary"%>
+      </span>
     </div>
   </div>
-<% end %> -->
+<% end %>
+
+
 
 <p><%= link_to "Return to Reviews", reviews_path%></p>

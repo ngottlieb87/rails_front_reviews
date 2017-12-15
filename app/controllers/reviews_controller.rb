@@ -4,11 +4,12 @@ class ReviewsController < ApplicationController
     @reviews = AllReviews.new.get_all_reviews
   end
 
-  # def new
-  #   @review = NewReview.new.create_review
-  # end
+  def show
+    id = params[:id]
+    @show_review = HTTParty.get('http://localhost:3001/reviews/' + id)
+  end
 
-  # def create
-  #   @review = NewReview.new
-  # end
+  def post
+
+  end
 end
